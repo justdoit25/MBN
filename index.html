@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حركة البناء الوطني | القائمة رقم 04 | بلدية حامة بوزيان</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green:        #006233;
+      --green-dark:   #004d26;
+      --green-deeper: #002e16;
+      --green-mid:    #0a5a2e;
+      --green-light:  #e8f5ee;
+      --gold:         #C9A227;
+      --gold-light:   #f0d878;
+      --gold-dark:    #a07d10;
+      --white:        #ffffff;
+      --off-white:    #f6faf7;
+      --text-dark:    #0d2010;
+      --text-mid:     #2d5a3d;
+      --text-muted:   #6b9b7a;
+      --border:       rgba(0,98,51,0.14);
+      --shadow-sm:    0 2px 12px rgba(0,98,51,0.10);
+      --shadow-md:    0 6px 28px rgba(0,98,51,0.14);
+      --shadow-lg:    0 16px 56px rgba(0,98,51,0.18);
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:'Tajawal',sans-serif;
+      background:var(--white);
+      color:var(--text-dark);
+      direction:rtl; text-align:right;
+      line-height:1.65; overflow-x:hidden;
+      -webkit-text-size-adjust:100%;
+    }
+    /* All images responsive by default */
+    img { max-width:100%; height:auto; display:block; }
+    /* Remove tap highlight on mobile */
+    a, button { -webkit-tap-highlight-color:transparent; touch-action:manipulation; }
+    /* Minimum touch target */
+    a.hero-cta, a.cta-vote-btn { min-height:48px; }
+
+    /* ═══ NAV ═══ */
+    nav {
+      position:fixed; inset:0 0 auto 0; z-index:200;
+      height:64px;
+      background:rgba(0,46,22,0.97);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(201,162,39,0.25);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 2.5rem;
+    }
+    .nav-left { display:flex; align-items:center; gap:0.75rem; }
+    .nav-logo-box {
+      width:38px; height:38px; background:var(--gold); border-radius:8px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900; font-size:0.72rem; color:var(--green-deeper); flex-shrink:0;
+    }
+    .nav-name-block strong { display:block; color:var(--white); font-weight:700; font-size:0.95rem; line-height:1.1; }
+    .nav-name-block span   { color:var(--gold); font-size:0.68rem; font-weight:400; }
+    .nav-right { display:flex; align-items:center; gap:1rem; }
+    .nav-election-info { color:rgba(255,255,255,0.65); font-size:0.78rem; display:flex; align-items:center; gap:0.4rem; }
+    .nav-list-badge { background:var(--gold); color:var(--green-deeper); font-weight:800; font-size:0.78rem; padding:0.3rem 0.85rem; border-radius:999px; white-space:nowrap; }
+
+    /* ═══ HERO ═══ */
+    .hero {
+      min-height:100dvh; background:var(--green-deeper);
+      position:relative; overflow:hidden;
+      display:grid; grid-template-columns:1fr 1fr;
+      align-items:center; padding-top:64px;
+    }
+    .hero-bg-pattern {
+      position:absolute; inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Cpolygon points='25,3 47,25 25,47 3,25' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+      pointer-events:none;
+    }
+    .hero-glow { position:absolute; border-radius:50%; pointer-events:none; }
+    .hero-glow-a { top:10%; left:5%; width:500px; height:500px; background:radial-gradient(circle,rgba(0,98,51,0.5) 0%,transparent 70%); }
+    .hero-glow-b { top:-80px; right:30%; width:400px; height:400px; background:radial-gradient(circle,rgba(201,162,39,0.07) 0%,transparent 70%); }
+    .hero-stripe { position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--green),var(--gold),var(--green)); }
+
+    .hero-content { position:relative; z-index:2; padding:3.5rem 3rem 3.5rem 1.5rem; }
+    .hero-pill {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      background:rgba(201,162,39,0.12); border:1px solid rgba(201,162,39,0.35);
+      border-radius:999px; padding:0.38rem 1rem;
+      color:var(--gold); font-size:0.78rem; font-weight:600; margin-bottom:1.5rem;
+    }
+    .hero-pill-dot { width:7px; height:7px; border-radius:50%; background:var(--gold); animation:dot-pulse 2s ease-in-out infinite; }
+    @keyframes dot-pulse { 0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.75)} }
+
+    .hero-party-name { font-size:clamp(1.9rem,3.5vw,2.9rem); font-weight:900; color:var(--white); line-height:1.15; margin-bottom:0.4rem; }
+    .hero-tagline    { font-size:clamp(0.9rem,1.6vw,1.1rem); color:var(--gold); font-weight:600; margin-bottom:1.75rem; }
+    .hero-meta       { display:flex; flex-direction:column; gap:0.4rem; margin-bottom:2.25rem; }
+    .hero-meta-row   { display:flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.7); font-size:0.9rem; }
+    .hero-mandate    { display:inline-block; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:0.2rem 0.6rem; font-size:0.75rem; color:rgba(255,255,255,0.8); margin-top:0.25rem; }
+    .hero-cta        { display:inline-flex; align-items:center; gap:0.75rem; background:var(--gold); color:var(--green-deeper); font-weight:800; font-size:1.1rem; padding:0.85rem 2rem; border-radius:12px; text-decoration:none; box-shadow:0 8px 32px rgba(201,162,39,0.4); transition:transform 0.2s,box-shadow 0.2s; }
+    .hero-cta:hover  { transform:translateY(-2px); box-shadow:0 12px 40px rgba(201,162,39,0.5); }
+    .hero-cta:active { transform:scale(0.98); }
+    .hero-cta-check  { width:26px; height:26px; border:2.5px solid var(--green-deeper); border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:0.95rem; font-weight:900; }
+
+    .hero-poster-side {
+      position:relative; z-index:2;
+      display:flex; align-items:center; justify-content:center;
+      padding:3.5rem 1.5rem 3.5rem 3rem;
+    }
+    .hero-poster-wrap { position:relative; width:85%; max-width:400px; }
+    .hero-poster-img  {
+      width:100%; display:block; border-radius:20px;
+      box-shadow:0 24px 72px rgba(0,0,0,0.55), 0 8px 24px rgba(0,0,0,0.3);
+      transform:rotate(-2.5deg);
+      transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .hero-poster-img:hover { transform:rotate(0deg) scale(1.02); }
+
+    /* ═══ SHARED ═══ */
+    .container { max-width:1180px; margin:0 auto; padding:0 1.5rem; }
+    .section-tag { display:inline-block; font-size:0.75rem; font-weight:700; padding:0.35rem 0.9rem; border-radius:999px; margin-bottom:0.9rem; }
+    .section-tag.green { background:var(--green-light); color:var(--green-dark); }
+    .section-tag.gold  { background:rgba(201,162,39,0.14); color:var(--gold-dark); }
+    .section-tag.white { background:rgba(255,255,255,0.12); color:rgba(255,255,255,0.85); }
+    .section-title { font-size:clamp(1.5rem,3vw,2.2rem); font-weight:800; line-height:1.25; }
+    .section-title.dark  { color:var(--text-dark); }
+    .section-title.light { color:var(--white); }
+
+    /* ═══ INTRO ═══ */
+    .section-intro { background:var(--off-white); padding:5rem 0; }
+    .intro-header  { text-align:center; margin-bottom:2.5rem; }
+    .intro-body    { max-width:820px; margin:0 auto; text-align:center; font-size:1.05rem; color:var(--text-mid); line-height:1.95; margin-bottom:3rem; }
+    .vision-grid   { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; max-width:820px; margin:0 auto; }
+    .vision-item   { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.4rem; display:flex; align-items:flex-start; gap:0.75rem; transition:border-color 0.25s,transform 0.25s; }
+    .vision-item:hover { border-color:var(--green); transform:translateY(-2px); }
+    .vision-arrow  { color:var(--gold); font-size:1.1rem; flex-shrink:0; margin-top:2px; }
+    .vision-text   { font-size:0.88rem; color:var(--text-mid); font-weight:500; line-height:1.6; }
+
+    /* ═══ PROGRAM POSTER (image 1) ═══ */
+    .section-program-poster { background:var(--white); padding:5.5rem 0; border-top:1px solid var(--border); }
+    .poster-layout  {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:4rem; align-items:center;
+    }
+    .poster-img-side { position:relative; }
+    .program-poster-img {
+      width:100%; display:block; border-radius:20px;
+      box-shadow:0 20px 60px rgba(0,98,51,0.18);
+      transform:rotate(1.5deg);
+      transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .program-poster-img:hover { transform:rotate(0deg) scale(1.01); }
+    .poster-desc-text { font-size:0.95rem; color:var(--text-mid); line-height:1.8; margin-bottom:2rem; }
+    .poster-axes-list { list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
+    .poster-axis-item { display:flex; align-items:flex-start; gap:0.75rem; font-size:0.88rem; color:var(--text-mid); line-height:1.5; }
+    .poster-axis-num  { width:26px; height:26px; background:var(--green); border-radius:6px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.7rem; color:white; flex-shrink:0; }
+    .poster-axis-num.gold-bg { background:var(--gold); color:var(--green-deeper); }
+
+    /* ═══ 10 PRIORITIES ═══ */
+    .section-priorities { background:var(--green-mid); padding:5.5rem 0; position:relative; overflow:hidden; }
+    .section-priorities::before { content:''; position:absolute; top:-150px; left:-150px; width:500px; height:500px; background:radial-gradient(circle,rgba(201,162,39,0.07) 0%,transparent 70%); pointer-events:none; }
+    .priorities-header { text-align:center; margin-bottom:3rem; position:relative; z-index:2; }
+    .priorities-grid   { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; position:relative; z-index:2; }
+    .priority-card     { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.09); border-radius:14px; padding:1.4rem 1.5rem; display:flex; align-items:flex-start; gap:1rem; transition:background 0.3s,border-color 0.3s,transform 0.3s; }
+    .priority-card:hover { background:rgba(255,255,255,0.09); border-color:rgba(201,162,39,0.4); transform:translateY(-2px); }
+    .priority-num  { width:34px; height:34px; background:var(--gold); border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:0.85rem; color:var(--green-deeper); flex-shrink:0; }
+    .priority-icon { font-size:1.45rem; flex-shrink:0; margin-top:2px; }
+    .priority-body { flex:1; }
+    .priority-title { font-size:0.98rem; font-weight:700; color:var(--white); margin-bottom:0.3rem; line-height:1.4; }
+    .priority-desc  { font-size:0.8rem; color:rgba(255,255,255,0.58); line-height:1.65; }
+
+    /* ═══ 12 AXES DETAILS ═══ */
+    .section-axes { background:var(--off-white); padding:5.5rem 0; }
+    .axes-header  { text-align:center; margin-bottom:3rem; }
+    .axes-grid    { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+    .axis-card    { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:1.5rem; transition:transform 0.22s,box-shadow 0.22s; }
+    .axis-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
+    .axis-header  { display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem; padding-bottom:0.75rem; border-bottom:1px solid var(--border); }
+    .axis-num     { width:32px; height:32px; background:var(--green); border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:0.78rem; color:white; flex-shrink:0; }
+    .axis-title   { font-size:0.88rem; font-weight:700; color:var(--text-dark); line-height:1.4; }
+    .axis-bullets { list-style:none; display:flex; flex-direction:column; gap:0.4rem; }
+    .axis-bullet  { font-size:0.78rem; color:var(--text-mid); display:flex; align-items:flex-start; gap:0.5rem; line-height:1.6; }
+    .axis-bullet::before { content:'•'; color:var(--gold); font-size:1rem; flex-shrink:0; line-height:1.3; }
+
+    /* ═══ COMMITMENT CHARTER ═══ */
+    .section-commitment { background:var(--green-deeper); padding:5.5rem 0; }
+    .commitment-header  { text-align:center; margin-bottom:3rem; }
+    .commitment-intro   { max-width:680px; margin:0 auto 2.5rem; text-align:center; color:rgba(255,255,255,0.65); font-size:0.95rem; line-height:1.8; }
+    .commitment-grid    { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+    .commitment-item    { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.09); border-radius:12px; padding:1.25rem 1.5rem; display:flex; align-items:flex-start; gap:0.85rem; transition:background 0.3s,border-color 0.3s; }
+    .commitment-item:hover { background:rgba(255,255,255,0.09); border-color:rgba(201,162,39,0.4); }
+    .commitment-check   { width:30px; height:30px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; color:var(--green-deeper); font-weight:900; flex-shrink:0; }
+    .commitment-text    { font-size:0.86rem; color:rgba(255,255,255,0.72); line-height:1.65; }
+
+    /* ═══ CANDIDATES ═══ */
+    .section-candidates { background:var(--white); padding:5.5rem 0; }
+    .candidates-header  { text-align:center; margin-bottom:0.75rem; }
+    .candidates-sub     { text-align:center; color:var(--text-muted); font-size:0.9rem; margin-bottom:2.75rem; }
+
+    .official-poster-wrap { margin-bottom:3rem; text-align:center; }
+    .official-poster-img  {
+      width:100%; max-width:900px; display:block; margin:0 auto;
+      border-radius:20px;
+      box-shadow:0 16px 56px rgba(0,98,51,0.18);
+    }
+    .poster-caption { margin-top:0.9rem; font-size:0.82rem; color:var(--text-muted); font-weight:500; }
+
+    .candidates-divider { display:flex; align-items:center; gap:1rem; margin-bottom:2.5rem; }
+    .candidates-divider hr { flex:1; border:none; border-top:1px solid var(--border); }
+    .candidates-divider-label { font-size:0.8rem; color:var(--text-muted); font-weight:600; white-space:nowrap; }
+
+    .candidates-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:0.85rem; }
+    .candidate-card  { background:var(--off-white); border:1px solid var(--border); border-radius:12px; padding:1.1rem 0.75rem; text-align:center; position:relative; transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s; overflow:hidden; }
+    .candidate-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:rgba(0,98,51,0.3); }
+    .candidate-card.is-head { border-color:var(--gold); background:linear-gradient(145deg,#fdf8e8,#f5edd8); }
+    .cand-num   { position:absolute; top:0.5rem; right:0.5rem; width:22px; height:22px; background:var(--green); border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:800; color:var(--white); }
+    .is-head .cand-num { background:var(--gold); color:var(--green-deeper); }
+    .cand-avatar { width:52px; height:52px; border-radius:50%; margin:0 auto 0.7rem; display:flex; align-items:center; justify-content:center; font-size:1.3rem; font-weight:800; color:var(--white); flex-shrink:0; }
+    .cand-name  { font-size:0.78rem; font-weight:700; color:var(--text-dark); line-height:1.4; margin-bottom:0.25rem; }
+    .cand-role  { font-size:0.68rem; color:var(--text-muted); line-height:1.4; }
+
+    /* ═══ CONCLUSION ═══ */
+    .section-conclusion { background:var(--green-light); padding:5rem 0; }
+    .conclusion-header  { text-align:center; margin-bottom:2rem; }
+    .conclusion-text    { max-width:820px; margin:0 auto; text-align:center; font-size:1.02rem; color:var(--text-mid); line-height:1.95; }
+    .conclusion-quote   { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:2rem; margin-top:2rem; max-width:820px; margin-left:auto; margin-right:auto; border-right:4px solid var(--gold); }
+    .conclusion-quote p { font-size:1.05rem; font-weight:600; color:var(--text-dark); line-height:1.8; }
+
+    /* ═══ CTA ═══ */
+    .section-cta { background:var(--green-deeper); padding:5rem 0; text-align:center; position:relative; overflow:hidden; }
+    .section-cta::before { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Cpolygon points='25,3 47,25 25,47 3,25' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E"); pointer-events:none; }
+    .cta-label   { position:relative; z-index:2; color:rgba(255,255,255,0.65); font-size:0.9rem; margin-bottom:0.75rem; }
+    .cta-big-num { position:relative; z-index:2; font-size:clamp(5rem,12vw,9rem); font-weight:900; line-height:1; background:linear-gradient(145deg,var(--gold-light),var(--gold),var(--gold-dark)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:0.5rem; }
+    .cta-sub-label { position:relative; z-index:2; color:rgba(255,255,255,0.65); font-size:1rem; margin-bottom:2rem; }
+    .cta-vote-btn  { position:relative; z-index:2; display:inline-flex; align-items:center; gap:1rem; background:var(--gold); color:var(--green-deeper); font-weight:800; font-size:1.25rem; padding:1rem 2.5rem; border-radius:14px; text-decoration:none; box-shadow:0 8px 32px rgba(201,162,39,0.4); transition:transform 0.2s,box-shadow 0.2s; margin-bottom:1rem; }
+    .cta-vote-btn:hover  { transform:translateY(-2px); box-shadow:0 14px 42px rgba(201,162,39,0.5); }
+    .cta-vote-btn:active { transform:scale(0.98); }
+    .cta-check-box { width:32px; height:32px; border:2.5px solid var(--green-deeper); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:900; }
+    .cta-date-label { position:relative; z-index:2; color:rgba(255,255,255,0.6); font-size:0.9rem; }
+
+    /* ═══ FOOTER ═══ */
+    footer { background:var(--green-deeper); border-top:2px solid var(--gold); padding:3rem 2rem; text-align:center; }
+    .footer-logo    { width:56px; height:56px; background:var(--gold); border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:0.95rem; color:var(--green-deeper); margin:0 auto 1.25rem; }
+    .footer-name    { color:var(--white); font-size:1.05rem; font-weight:700; margin-bottom:0.4rem; }
+    .footer-slogan  { color:var(--gold); font-size:0.88rem; margin-bottom:1.5rem; }
+    .footer-info    { color:rgba(255,255,255,0.45); font-size:0.78rem; line-height:2; }
+    .footer-country { color:var(--gold); font-weight:700; font-size:1.05rem; margin-top:1.5rem; }
+
+    /* ═══ SCROLL REVEAL ═══ */
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity 0.65s ease,transform 0.65s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* ═══ RESPONSIVE ═══ */
+
+    /* ── 1024px: tablet landscape ── */
+    @media(max-width:1023px) {
+      .candidates-grid { grid-template-columns:repeat(4,1fr); }
+      .axes-grid        { grid-template-columns:repeat(2,1fr); }
+      .hero-content     { padding:3rem 2rem 3rem 1.25rem; }
+      .hero-poster-side { padding:3rem 1.25rem 3rem 2rem; }
+    }
+
+    /* ── 768px: tablet portrait ── */
+    @media(max-width:768px) {
+      .candidates-grid { grid-template-columns:repeat(3,1fr); }
+      .priorities-grid { grid-template-columns:repeat(2,1fr); }
+      .commitment-grid { grid-template-columns:repeat(2,1fr); }
+      .vision-grid     { grid-template-columns:repeat(2,1fr); }
+    }
+
+    /* ── 640px: large mobile / small tablet ── */
+    @media(max-width:640px) {
+      nav { padding:0 1rem; height:56px; }
+      .nav-name-block strong { font-size:0.82rem; }
+      .nav-name-block span   { display:none; }
+      .nav-election-info     { display:none; }
+
+      /* Hero — stack vertically, poster on top */
+      .hero {
+        grid-template-columns:1fr;
+        min-height:100dvh;
+        padding-bottom:2.5rem;
+        padding-top:56px;
+      }
+      .hero-content {
+        order:2;
+        padding:1.75rem 1.25rem 2.5rem;
+        text-align:center;
+      }
+      .hero-meta-row  { justify-content:center; }
+      .hero-pill      { margin-left:auto; margin-right:auto; }
+      .hero-cta       {
+        width:100%;
+        justify-content:center;
+        font-size:1rem;
+        padding:0.9rem 1.5rem;
+      }
+      .hero-poster-side {
+        order:1;
+        padding:2rem 1.25rem 0.75rem;
+        justify-content:center;
+      }
+      .hero-poster-wrap { width:68%; max-width:280px; }
+      .hero-poster-img  { transform:none; }
+      .hero-mandate     { display:none; }
+
+      /* Sections padding */
+      .section-intro,.section-program-poster,.section-priorities,.section-axes,
+      .section-commitment,.section-candidates,.section-conclusion,.section-cta {
+        padding-top:3rem;
+        padding-bottom:3rem;
+      }
+      footer { padding:2.25rem 1.25rem; }
+
+      /* Program poster */
+      .poster-layout       { grid-template-columns:1fr; gap:1.75rem; }
+      .program-poster-img  { transform:none; max-width:360px; margin:0 auto; }
+
+      /* Grids collapse to 1 col */
+      .priorities-grid { grid-template-columns:1fr; }
+      .vision-grid     { grid-template-columns:1fr; }
+      .axes-grid       { grid-template-columns:1fr; }
+      .commitment-grid { grid-template-columns:1fr; }
+
+      /* Candidates */
+      .candidates-grid { grid-template-columns:repeat(2,1fr); gap:0.75rem; }
+
+      /* CTA section */
+      .cta-vote-btn {
+        font-size:1.05rem;
+        padding:0.9rem 1.75rem;
+        width:100%;
+        max-width:320px;
+        justify-content:center;
+      }
+      .cta-big-num { font-size:clamp(4.5rem,18vw,6rem); }
+
+      /* Typography adjustments */
+      .section-title { font-size:clamp(1.3rem,5.5vw,1.8rem); }
+      .intro-body    { font-size:0.95rem; }
+    }
+
+    /* ── 420px: small phones ── */
+    @media(max-width:420px) {
+      nav { padding:0 0.75rem; }
+      .nav-logo-box       { width:32px; height:32px; font-size:0.62rem; }
+      .nav-name-block strong { font-size:0.78rem; }
+      .nav-list-badge     { font-size:0.72rem; padding:0.25rem 0.65rem; }
+
+      .hero-poster-wrap   { width:76%; }
+      .hero-party-name    { font-size:clamp(1.5rem,7vw,2rem); }
+
+      .container { padding:0 0.9rem; }
+
+      .candidates-grid    { grid-template-columns:repeat(2,1fr); gap:0.55rem; }
+      .cand-avatar        { width:42px; height:42px; font-size:1.05rem; }
+      .cand-name          { font-size:0.72rem; }
+      .cand-role          { font-size:0.63rem; }
+
+      .priority-card      { padding:1rem 1rem; }
+      .priority-title     { font-size:0.9rem; }
+      .priority-desc      { font-size:0.76rem; }
+
+      .axis-card          { padding:1.1rem 1rem; }
+      .axis-title         { font-size:0.83rem; }
+      .axis-bullet        { font-size:0.74rem; }
+
+      .commitment-item    { padding:1rem 1.1rem; }
+      .commitment-text    { font-size:0.8rem; }
+
+      .hero-cta, .cta-vote-btn { font-size:0.95rem; padding:0.85rem 1.25rem; }
+
+      .section-intro,.section-program-poster,.section-priorities,.section-axes,
+      .section-commitment,.section-candidates,.section-conclusion,.section-cta {
+        padding-top:2.5rem;
+        padding-bottom:2.5rem;
+      }
+    }
+
+    /* ── Reduced motion ── */
+    @media(prefers-reduced-motion:reduce) {
+      .reveal,.hero-poster-img,.program-poster-img { transition:none; opacity:1; transform:none !important; }
+      .hero-pill-dot { animation:none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav>
+  <div class="nav-left">
+    <div class="nav-logo-box">ح.ب.و</div>
+    <div class="nav-name-block">
+      <strong>حركة البناء الوطني</strong>
+      <span>بلدية حامة بوزيان</span>
+    </div>
+  </div>
+  <div class="nav-right">
+    <span class="nav-election-info">&#128197; 28 نوفمبر 2026</span>
+    <span class="nav-list-badge">القائمة رقم 04</span>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-glow hero-glow-a"></div>
+  <div class="hero-glow hero-glow-b"></div>
+
+  <!-- Right: text content -->
+  <div class="hero-content">
+    <div class="hero-pill"><span class="hero-pill-dot"></span>الانتخابات المحلية 2026</div>
+    <h1 class="hero-party-name">حركة البناء الوطني</h1>
+    <p class="hero-tagline">معاً من أجل جزائر قوية ومجتمع متضامن</p>
+    <div class="hero-meta">
+      <div class="hero-meta-row">&#127961; بلدية حامة بوزيان - ولاية قسنطينة</div>
+      <div class="hero-meta-row">&#128197; انتخابات المجالس الشعبية البلدية - 28 نوفمبر 2026</div>
+      <div class="hero-mandate">العهدة الانتخابية 2026 - 2031</div>
+    </div>
+    <a href="#vote" class="hero-cta">
+      <span class="hero-cta-check">&#10003;</span>
+      انتخب القائمة رقم 04
+    </a>
+  </div>
+
+  <!-- Left: vote poster (image 2) -->
+  <div class="hero-poster-side">
+    <div class="hero-poster-wrap">
+      <img src="WhatsApp%20Image%202026-11-10%20at%2015.44.43.jpeg"
+           alt="انتخب القائمة رقم 04 - حركة البناء الوطني - الانتخابات المحلية 28 نوفمبر 2026"
+           class="hero-poster-img">
+    </div>
+  </div>
+
+  <div class="hero-stripe"></div>
+</section>
+
+<!-- ═══════════════════ INTRO ═══════════════════ -->
+<section class="section-intro">
+  <div class="container">
+    <div class="intro-header reveal">
+      <span class="section-tag green">توطئة</span>
+      <h2 class="section-title dark">بلدية حامة بوزيان تستحق الأفضل</h2>
+    </div>
+    <p class="intro-body reveal">
+      انطلاقاً من إيماننا بأن التنمية الحقيقية تبدأ من الحي والشارع والقرية، وأن البلدية هي المؤسسة
+      الأقرب إلى المواطن والأكثر ارتباطاً بانشغالاته اليومية، نطرح رؤيتنا لبلدية تقوم على العمل
+      الميداني والتسيير العقلاني والشفافية. نؤمن بأن المواطن ليس مجرد مستفيد من الخدمة العمومية،
+      بل شريك حقيقي في تحديد الأولويات ومتابعة المشاريع وتقييم الأداء.
+      إن البلدية ليست مجرد هيكل إداري لتسيير الملفات اليومية، وإنما فضاء أساسي لصناعة التنمية،
+      وتحسين الخدمات العمومية، وتثمين الموارد المحلية، ودعم النشاط الاقتصادي، وخلق فرص العمل،
+      وحماية البيئة، وتعزيز المشاركة المواطنة.
+    </p>
+    <div class="vision-grid">
+      <div class="vision-item reveal"><span class="vision-arrow">&#9658;</span><span class="vision-text">من تسيير الشأن المحلي إلى صناعة التنمية المحلية</span></div>
+      <div class="vision-item reveal"><span class="vision-arrow">&#9658;</span><span class="vision-text">من إدارة الملفات إلى إدارة النتائج والمؤشرات</span></div>
+      <div class="vision-item reveal"><span class="vision-arrow">&#9658;</span><span class="vision-text">من المشاريع المتفرقة إلى التنمية المتكاملة والمتوازنة</span></div>
+      <div class="vision-item reveal"><span class="vision-arrow">&#9658;</span><span class="vision-text">من المواطن المستفيد إلى المواطن الشريك والمساهم</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PROGRAM POSTER (image 1) ═══════════════════ -->
+<section class="section-program-poster">
+  <div class="container">
+    <div class="poster-layout">
+      <!-- Image 1 -->
+      <div class="poster-img-side reveal">
+        <img src="WhatsApp%20Image%202026-11-10%20at%2015.42.21.jpeg"
+             alt="البرنامج الانتخابي البلدي لمجلس الشعبي البلدي - بلدية حامة بوزيان 2026-2031"
+             class="program-poster-img">
+      </div>
+
+      <!-- Description -->
+      <div class="reveal">
+        <span class="section-tag green">البرنامج الانتخابي</span>
+        <h2 class="section-title dark" style="margin-bottom:1rem;">البرنامج الانتخابي البلدي<br>لمجلس الشعبي البلدي</h2>
+        <p class="poster-desc-text">
+          نقدم هذا البرنامج للمواطنين بوصفه عقد ثقة ومسؤولية، لا مجرد وعود انتخابية.
+          نلتزم من خلاله بالعمل في إطار القانون، وترتيب الأولويات وفق الحاجات الحقيقية،
+          وقياس النتائج، وتقديم الحصيلة والمساءلة أمام المواطن.
+          برنامج يشمل 12 محوراً تنموياً يمس كل جوانب حياة المواطن.
+        </p>
+        <ul class="poster-axes-list">
+          <li class="poster-axis-item"><span class="poster-axis-num">01</span>جودة الحياة والتهيئة والتنمية المتوازنة</li>
+          <li class="poster-axis-item"><span class="poster-axis-num">02</span>خدمة عمومية فعالة في خدمة المواطن</li>
+          <li class="poster-axis-item"><span class="poster-axis-num">03</span>الصحة والوقاية والحماية الاجتماعية</li>
+          <li class="poster-axis-item"><span class="poster-axis-num">04</span>التعليم والتكوين وبناء رأس المال البشري</li>
+          <li class="poster-axis-item"><span class="poster-axis-num">05</span>اقتصاد محلي منتج واستثمار يخلق الثروة والعمل</li>
+          <li class="poster-axis-item"><span class="poster-axis-num">06</span>البيئة والغابات والوقاية من المخاطر</li>
+          <li class="poster-axis-item"><span class="poster-axis-num">07</span>النقل والتنقل والبنية التحتية</li>
+          <li class="poster-axis-item"><span class="poster-axis-num">08</span>الشباب والرياضة والثقافة والذاكرة</li>
+          <li class="poster-axis-item"><span class="poster-axis-num">09</span>النظافة والبيئة والاقتصاد الدائري</li>
+          <li class="poster-axis-item"><span class="poster-axis-num">10</span>الحوكمة والشفافية والديمقراطية التشاركية</li>
+          <li class="poster-axis-item"><span class="poster-axis-num gold-bg">11</span>المالية المحلية وتثمين أملاك الجماعات المحلية</li>
+          <li class="poster-axis-item"><span class="poster-axis-num gold-bg">12</span>التعاون بين البلديات والتضامن الإقليمي</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 10 PRIORITIES ═══════════════════ -->
+<section class="section-priorities">
+  <div class="container">
+    <div class="priorities-header reveal">
+      <span class="section-tag gold">أولويات برنامجنا</span>
+      <h2 class="section-title light">10 أولويات لبلدية أفضل</h2>
+    </div>
+    <div class="priorities-grid" id="priorities-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 12 AXES DETAILS ═══════════════════ -->
+<section class="section-axes">
+  <div class="container">
+    <div class="axes-header reveal">
+      <span class="section-tag green">البرنامج التفصيلي</span>
+      <h2 class="section-title dark">12 محوراً - التفاصيل الكاملة</h2>
+    </div>
+    <div class="axes-grid" id="axes-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ COMMITMENT CHARTER ═══════════════════ -->
+<section class="section-commitment">
+  <div class="container">
+    <div class="commitment-header reveal">
+      <span class="section-tag white">ميثاق المنتخب</span>
+      <h2 class="section-title light">التزاماتنا أمام المواطن</h2>
+    </div>
+    <p class="commitment-intro reveal">
+      نعتبر أن الانتخاب هو عقد ثقة ومسؤولية، ولهذا نلتزم بأن يكون عمل منتخبينا قائماً على الواقعية
+      والشفافية والنتائج. فيما يلي التزاماتنا الصريحة أمام مواطني بلدية حامة بوزيان.
+    </p>
+    <div class="commitment-grid" id="commitment-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CANDIDATES ═══════════════════ -->
+<section class="section-candidates" id="candidates">
+  <div class="container">
+    <div class="candidates-header reveal">
+      <span class="section-tag green">قائمة المترشحين</span>
+      <h2 class="section-title dark">30 مترشحاً في خدمة البلدية</h2>
+    </div>
+    <p class="candidates-sub reveal">القائمة رقم 04 - المجلس الشعبي البلدي - بلدية حامة بوزيان - الانتخابات المحلية 28 نوفمبر 2026</p>
+
+    <!-- Image 3: official candidates poster -->
+    <div class="official-poster-wrap reveal">
+      <img src="WhatsApp%20Image%202026-11-10%20at%2015.53.22.jpeg"
+           alt="القائمة الرسمية للمترشحين - انتخب القائمة رقم 04 - بلدية حامة بوزيان"
+           class="official-poster-img">
+      <p class="poster-caption">القائمة الرسمية للمترشحين - بلدية حامة بوزيان - انتخابات 28 نوفمبر 2026</p>
+    </div>
+
+    <!-- Divider -->
+    <div class="candidates-divider reveal">
+      <hr><span class="candidates-divider-label">المترشحون بالتفصيل</span><hr>
+    </div>
+
+    <!-- Generated candidate cards -->
+    <div class="candidates-grid" id="candidates-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CONCLUSION ═══════════════════ -->
+<section class="section-conclusion">
+  <div class="container">
+    <div class="conclusion-header reveal">
+      <span class="section-tag green">الخاتمة</span>
+      <h2 class="section-title dark">عقد ثقة ومسؤولية</h2>
+    </div>
+    <p class="conclusion-text reveal">
+      إن برنامج حركة البناء الوطني للانتخابات المحلية يوم 28 نوفمبر 2026 ينطلق من قناعة أساسية مفادها
+      أن التنمية الحقيقية تبدأ من المواطن ومن محيطه المحلي، وأن قوة الدولة تزداد بقوة جماعاتها المحلية
+      ونجاعة مؤسساتها المنتخبة. نطمح إلى بلديات قريبة من المواطن، وإدارة محلية تقوم على الكفاءة
+      والشفافية والنتائج. نريد الانتقال من تسيير الاحتياجات اليومية إلى صناعة التنمية، ومن المشاريع
+      المتفرقة إلى رؤية متكاملة تستثمر في الإنسان وتثمن الموارد المحلية.
+    </p>
+    <div class="conclusion-quote reveal">
+      <p>
+        لا نعد بما يفوق إمكاناتنا، بل نلتزم بالعمل والاجتهاد لترك بلدية أفضل لأبنائنا.
+        معاً نبني الثقة... ومعاً نصنع التغيير.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CTA ═══════════════════ -->
+<section class="section-cta" id="vote">
+  <div class="container">
+    <p class="cta-label">انتخب</p>
+    <div class="cta-big-num">04</div>
+    <p class="cta-sub-label">الرقم التعريفي لقوائمنا الانتخابية</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0.85rem;">
+      <a href="#" class="cta-vote-btn">
+        <span class="cta-check-box">&#10003;</span>
+        انتخب القائمة رقم 04
+      </a>
+      <span class="cta-date-label">&#128197; 28 نوفمبر 2026 - الانتخابات المحلية</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer>
+  <div class="footer-logo">ح.ب.و</div>
+  <p class="footer-name">حركة البناء الوطني</p>
+  <p class="footer-slogan">معاً نبني الثقة... ومعاً نصنع التغيير</p>
+  <p class="footer-info">
+    انتخابات المجالس الشعبية البلدية<br>
+    بلدية حامة بوزيان - ولاية قسنطينة<br>
+    28 نوفمبر 2026 - العهدة 2026-2031
+  </p>
+  <p class="footer-country">تحيا الجزائر</p>
+</footer>
+
+<script>
+/* ══════ DATA ══════ */
+
+const priorities = [
+  { icon:'🏙️', title:'التنمية الحضرية وتحسين المحيط المعيشي', desc:'تهيئة الأحياء والطرقات والإنارة العمومية والاهتمام بالمناطق الريفية' },
+  { icon:'♻️', title:'النظافة وحماية البيئة', desc:'تحسين جمع النفايات والعناية بالمساحات الخضراء وحماية البيئة المحلية' },
+  { icon:'🏛️', title:'الخدمات العمومية والإدارة', desc:'تحسين استقبال المواطنين وتبسيط الإجراءات وتعزيز الشفافية والرقمنة' },
+  { icon:'🛣️', title:'الطرقات والنقل', desc:'صيانة الطرقات وتحسين الربط بين الأحياء والتجمعات السكنية' },
+  { icon:'⚽', title:'الشباب والرياضة', desc:'دعم المبادرات الشبابية وتطوير المنشآت الرياضية ورعاية المواهب' },
+  { icon:'📚', title:'الثقافة والذاكرة المحلية', desc:'دعم النشاطات الثقافية والاهتمام بالتراث المحلي وتثمينه' },
+  { icon:'🏥', title:'الصحة والتضامن الاجتماعي', desc:'تحسين المحيط الصحي والاهتمام بالفئات الهشة وكبار السن' },
+  { icon:'📈', title:'الاستثمار والتنمية الاقتصادية', desc:'تشجيع النشاط التجاري والحرفي وتثمين الإمكانات الفلاحية المحلية' },
+  { icon:'🎓', title:'المدرسة والتكوين', desc:'العناية بالمؤسسات التربوية ودعم التكوين وربطه باحتياجات المنطقة' },
+  { icon:'🤝', title:'الحوكمة والمشاركة المواطنة', desc:'فتح قنوات التواصل مع المواطنين ومتابعة المشاريع بشفافية ومساءلة' }
+];
+
+const axes = [
+  {
+    num:'01', title:'جودة الحياة والتهيئة والتنمية المتوازنة',
+    bullets:['إعداد برنامج لتحسين جودة الحياة والتهيئة في الأحياء','التسمية والترقيم الذكي للشوارع والأحياء مع إدراجها في تطبيقات الخرائط','معالجة النقاط السوداء في الطرقات والأرصفة وتصريف مياه الأمطار','تحسين مداخل المدن والقرى وإعادة تأهيل الساحات العمومية']
+  },
+  {
+    num:'02', title:'خدمة عمومية فعالة في خدمة المواطن',
+    bullets:['تحسين استقبال المواطنين وتبسيط الإجراءات الإدارية','إطلاق تطبيق البلدية الذكية للتبليغ عن الأعطال الجوارية','إنشاء شباك موحد للمواطن وشباك مرافقة المستثمرين','تكوين الموظفين وتقييم الأداء بقياس دوري لرضا المواطنين']
+  },
+  {
+    num:'03', title:'الصحة والوقاية والحماية الاجتماعية',
+    bullets:['دعم الوقاية الصحية وتحسين البيئة والنظافة','إنشاء وحدات صحية متنقلة بين القرى والمداشر البعيدة','إعداد خريطة محلية للحاجات الاجتماعية والصحية','دعم الجمعيات الجادة والاهتمام بكبار السن والفئات الهشة']
+  },
+  {
+    num:'04', title:'التعليم والتكوين وبناء رأس المال البشري',
+    bullets:['صيانة المدارس الابتدائية وتحسين النقل والإطعام المدرسي','إطلاق نماذج للمدرسة الخضراء التي تسير بالطاقة الشمسية','مكافحة التسرب المدرسي بالتنسيق مع الجمعيات وأولياء التلاميذ','تشجيع المطالعة والاهتمام بالمكتبة البلدية']
+  },
+  {
+    num:'05', title:'اقتصاد محلي منتج واستثمار يخلق الثروة',
+    bullets:['إنشاء شباك مرافقة المستثمرين وحاملي المشاريع','إعداد دليل الاستثمار المحلي وجرد العقار الاقتصادي','تثمين الحرف والمنتجات المحلية وتشجيع الصناعات التحويلية الصغيرة','مرافقة المؤسسات الصغيرة والمقاولين الشباب وتنظيم لقاءات دورية مع المستثمرين']
+  },
+  {
+    num:'06', title:'البيئة والغابات والوقاية من المخاطر',
+    bullets:['تحديد النقاط السوداء وإعداد خريطة بلدية للمخاطر','تطوير آليات التبليغ والإنذار المبكر','الوقاية من الحرائق وإشراك السكان في جهود الوقاية','دعم التشجير المناسب للمناخ وتحسين المسالك الغابية']
+  },
+  {
+    num:'07', title:'النقل والتنقل والبنية التحتية',
+    bullets:['معالجة النقاط السوداء وتنظيم مواقف السيارات','تحسين الأرصفة وحماية محيط المدارس','تحسين الوصول إلى المناطق الريفية','تطوير مسارات المشاة ودراسة مسارات الدراجات']
+  },
+  {
+    num:'08', title:'الشباب والرياضة والثقافة والذاكرة',
+    bullets:['دعم المبادرات الشبابية المحلية وإنشاء فضاءات متعددة الخدمات','صيانة المنشآت الرياضية وتطوير الملاعب الجوارية','دعم المكتبات والمراكز الثقافية وبرامج اكتشاف المواهب','جرد المواقع التاريخية وتوثيق الذاكرة المحلية وإنشاء أرشيف رقمي']
+  },
+  {
+    num:'09', title:'النظافة والبيئة والاقتصاد الدائري',
+    bullets:['إعادة تنظيم مسارات جمع النفايات والقضاء على النقاط السوداء','إدخال الفرز من المصدر تدريجياً وربطه بمشاريع إعادة التدوير','استغلال بقايا أسواق الخضر كسماد طبيعي لتنمية الحدائق','تشجيع المؤسسات الناشئة في الاقتصاد التدويري']
+  },
+  {
+    num:'10', title:'الحوكمة والشفافية والديمقراطية التشاركية',
+    bullets:['لقاءات دورية مع سكان الأحياء والاستماع للمجتمع المدني','اعتماد ميزانية تشاركية يستشار فيها ممثلو الأحياء في تحديد الأولويات','نشر المعلومات المتاحة وتقديم حصيلة سنوية للمواطنين','اعتماد مؤشرات أداء وضمان عدالة توزيع المشاريع على الأحياء']
+  },
+  {
+    num:'11', title:'المالية المحلية وتثمين أملاك الجماعات المحلية',
+    bullets:['تحسين تحصيل الموارد المحلية في إطار القانون','جرد الممتلكات البلدية بالاعتماد على الرقمنة وتسيير الإعلام الجغرافي','تثمين الأملاك غير المستغلة وتحسين استغلال الأسواق والمرافق','إعطاء الأولوية للمشاريع ذات الأثر المباشر على جودة حياة المواطن']
+  },
+  {
+    num:'12', title:'التعاون بين البلديات والتضامن الإقليمي',
+    bullets:['التعاون بدل التكرار والتكامل بدل التشتت في تقديم الخدمات','مشاريع مشتركة: معالجة النفايات، الأسواق، النقل، معالجة المياه','تثمين المنتجات الفلاحية والمسارات السياحية بالتنسيق الإقليمي','مناطق النشاط الاقتصادي والمنشآت الرياضية والثقافية المشتركة']
+  }
+];
+
+const commitments = [
+  'العمل في إطار ما يخوله القانون وعدم تجاوز صلاحيات المجالس المنتخبة',
+  'تحديد الأولويات بناءً على التشخيص الميداني والحاجات الحقيقية للمواطن',
+  'إشراك المواطنين والمجتمع المدني في تحديد الأولويات ومتابعة المشاريع',
+  'احترام القوانين والتنظيمات في جميع القرارات والتنسيق مع السلطات الولائية',
+  'حماية المال والممتلكات العمومية وتكريس مبادئ الشفافية والوقاية من الفساد',
+  'ضمان المساواة في التعامل مع المواطنين بغض النظر عن أي اعتبار',
+  'رفض استعمال الوسائل والإمكانات العمومية لأغراض شخصية أو حزبية',
+  'نشر المعلومات التي يسمح القانون بنشرها وتسهيل الوصول إليها',
+  'تقييم الأداء بصورة دورية باعتماد مؤشرات موضوعية وقابلة للقياس',
+  'تقديم حصيلة سنوية للمواطنين حول ما تحقق وما لم يتحقق وأسباب ذلك'
+];
+
+const candidates = [
+  { n:1,  name:'بوذراع كمال',       role:'رئيس القائمة',          init:'ب', head:true  },
+  { n:2,  name:'بنطبار عبد الوهاب', role:'',                       init:'ب', head:false },
+  { n:3,  name:'شهراري مصطفى',      role:'',                       init:'ش', head:false },
+  { n:4,  name:'شهراري حمادي',       role:'ماجستير تسيير مالي',    init:'ش', head:false },
+  { n:5,  name:'محلوف الطاهر',       role:'ماجستير هندسة مدنية',   init:'م', head:false },
+  { n:6,  name:'سويسي فوزي',         role:'ماجستير اقتصاد',        init:'س', head:false },
+  { n:7,  name:'صحراوي الزيد',       role:'',                       init:'ص', head:false },
+  { n:8,  name:'بعقلان بدر الدين',   role:'سلك الدفاع الوطني',    init:'ب', head:false },
+  { n:9,  name:'بلعطار موسى',        role:'مهندس BATIP',            init:'ب', head:false },
+  { n:10, name:'حامي عبد الناصر',    role:'شريك مكتب دراسات',      init:'ح', head:false },
+  { n:11, name:'مصباح عمار',         role:'',                       init:'م', head:false },
+  { n:12, name:'يخلف باديس',         role:'محافظ البيئة',           init:'ي', head:false },
+  { n:13, name:'بوثامة حسين',        role:'',                       init:'ب', head:false },
+  { n:14, name:'سعدي يوسف',          role:'بلدية بوزيان',          init:'س', head:false },
+  { n:15, name:'برجال قادية',        role:'',                       init:'ب', head:false },
+  { n:16, name:'شريح صابر',          role:'',                       init:'ش', head:false },
+  { n:17, name:'بوداغ صالح',         role:'محامي',                  init:'ب', head:false },
+  { n:18, name:'عيسالي علي',         role:'سلك الإنقاذ والأمن',   init:'ع', head:false },
+  { n:19, name:'بوتركو عبد الله',    role:'',                       init:'ب', head:false },
+  { n:20, name:'بلهاري فارس',        role:'أستاذ تعليم ثانوي',     init:'ب', head:false },
+  { n:21, name:'زيد الجاي أحمرة',    role:'مهندس السكن والعمران',  init:'ز', head:false },
+  { n:22, name:'زاكي زهرة',          role:'المنقودة خالة',          init:'ز', head:false },
+  { n:23, name:'قندوز مسعود',        role:'أعمال حرة',              init:'ق', head:false },
+  { n:24, name:'زرداري رفال',        role:'',                       init:'ز', head:false },
+  { n:25, name:'قطبول سعدية',        role:'بلدية بوزيان',          init:'ق', head:false },
+  { n:26, name:'بودنويد نادر',       role:'',                       init:'ب', head:false },
+  { n:27, name:'بن رحاب محمود',      role:'',                       init:'ب', head:false },
+  { n:28, name:'بورصاص الحسين',      role:'',                       init:'ب', head:false },
+  { n:29, name:'حميدشي داود',        role:'أستاذ التعليم',          init:'ح', head:false },
+  { n:30, name:'عزراو خالد',         role:'',                       init:'ع', head:false }
+];
+
+const avatarColors = [
+  '#C9A227',
+  '#006233','#1a7a4c','#004d26','#2d8b5e','#0d6b3f',
+  '#1b5e3b','#24754a','#156b3e','#007840','#1f6e44',
+  '#28784f','#105e38','#357040','#4a8b62','#2a7050',
+  '#1e6a42','#326045','#3d7858','#1a7a4c','#006233',
+  '#005528','#2d8b5e','#0d6b3f','#1b5e3b','#24754a',
+  '#156b3e','#28784f','#105e38','#357040'
+];
+
+/* ══════ RENDER: Priorities ══════ */
+const pGrid = document.getElementById('priorities-grid');
+priorities.forEach((p, i) => {
+  const card = document.createElement('div');
+  card.className = 'priority-card reveal';
+  card.style.transitionDelay = (i * 0.05) + 's';
+  card.innerHTML = `
+    <div class="priority-num">${String(i+1).padStart(2,'0')}</div>
+    <div class="priority-icon">${p.icon}</div>
+    <div class="priority-body">
+      <div class="priority-title">${p.title}</div>
+      <div class="priority-desc">${p.desc}</div>
+    </div>`;
+  pGrid.appendChild(card);
+});
+
+/* ══════ RENDER: Axes ══════ */
+const aGrid = document.getElementById('axes-grid');
+axes.forEach((ax, i) => {
+  const card = document.createElement('div');
+  card.className = 'axis-card reveal';
+  card.style.transitionDelay = (i * 0.04) + 's';
+  const bullets = ax.bullets.map(b => `<li class="axis-bullet">${b}</li>`).join('');
+  card.innerHTML = `
+    <div class="axis-header">
+      <div class="axis-num">${ax.num}</div>
+      <div class="axis-title">${ax.title}</div>
+    </div>
+    <ul class="axis-bullets">${bullets}</ul>`;
+  aGrid.appendChild(card);
+});
+
+/* ══════ RENDER: Commitments ══════ */
+const comGrid = document.getElementById('commitment-grid');
+commitments.forEach((c, i) => {
+  const item = document.createElement('div');
+  item.className = 'commitment-item reveal';
+  item.style.transitionDelay = (i * 0.05) + 's';
+  item.innerHTML = `
+    <div class="commitment-check">&#10003;</div>
+    <div class="commitment-text">${c}</div>`;
+  comGrid.appendChild(item);
+});
+
+/* ══════ RENDER: Candidates ══════ */
+const cGrid = document.getElementById('candidates-grid');
+candidates.forEach((c, i) => {
+  const card = document.createElement('div');
+  card.className = 'candidate-card reveal' + (c.head ? ' is-head' : '');
+  card.style.transitionDelay = (i * 0.03) + 's';
+  card.innerHTML = `
+    <div class="cand-num">${String(c.n).padStart(2,'0')}</div>
+    <div class="cand-avatar" style="background:${avatarColors[i]}">${c.init}</div>
+    <div class="cand-name">${c.name}</div>
+    ${c.role ? `<div class="cand-role">${c.role}</div>` : ''}`;
+  cGrid.appendChild(card);
+});
+
+/* ══════ Scroll Reveal (IntersectionObserver) ══════ */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.07 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
